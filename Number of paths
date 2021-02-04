@@ -1,0 +1,21 @@
+PROBLEM: I/P- m=3, n=3
+         O/P- 6
+         
+         Explain:
+                 Let the given input 3*3 matrix is filled as such:
+                    A B C
+                    D E F
+                    G H I
+                    
+                 The possible paths which exists to reach 'I' from 'A' following above conditions are as follows:
+                 ABCFI, ABEHI, ADGHI, ADEFI, ADEHI, ABEFI.
+                 
+                
+SOLUTION:
+
+long long  numberOfPaths(int m, int n)
+{
+    if(m==1 || n==1) {return 1;}
+    return numberOfPaths(m, n-1)+numberOfPaths(n,m-1);
+    
+}
